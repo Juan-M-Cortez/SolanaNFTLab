@@ -6,6 +6,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
 import { darkTheme } from './src/styles/themes/darkTheme';
 import defaultTheme from './src/styles/themes/defaultTheme';
+import { Ionicons } from '@expo/vector-icons';
 
 const darkDrawerTheme = {
   ...DarkTheme,
@@ -29,11 +30,33 @@ export default function App() {
   return (
     <NavigationContainer theme={darkDrawerTheme}>
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Settings" component={SettingsScreen} />
+        <Drawer.Screen name="Home" component={HomeScreen} options={homeIcon} />
+        <Drawer.Screen name="Settings" component={SettingsScreen} options={settingsIcon} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
+}
+
+const homeIcon = {
+  title: 'Home',
+  drawerIcon: ({ focused, size }) => (
+    <Ionicons
+      name="home-outline"
+      size={16}
+      color={focused ? '#0d7ae9' : '#e3e3e3'}
+    />
+  )
+}
+
+const settingsIcon = {
+  title: 'Settings',
+  drawerIcon: ({ focused, size }) => (
+    <Ionicons
+      name="settings-outline"
+      size={16}
+      color={focused ? '#0d7ae9' : '#e3e3e3'}
+    />
+  )
 }
 
 
