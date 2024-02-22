@@ -1,26 +1,15 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Button } from 'react-native';
+import darkTheme from '../styles/themes/darkTheme';
 
-function SettingsScreen() {
+function SettingsScreen({ navigation }) {
   return (
-    <View style={style.container}>
-      <Text style={style.text}>Dashboard Screen</Text>
+    <View style={darkTheme.container}>
+      <Text style={darkTheme.text}>Settings Screen⚙️</Text>
+      <Button title="TOOGLE DRAWER" onPress={() => navigation.toggleDrawer() } />
     </View>
   );
 }
 
 export default SettingsScreen;
-
-const styles = StyleSheet.create({
-    container: {
-        flix: 1,
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    text: {
-        fontSize: 24,
-        frontWeight: "bold",
-        marginBottom: 16,
-    },
-
-});
+  

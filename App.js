@@ -1,21 +1,26 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
-import { NavigationContainer } from '@react-navigation/native';
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import DashboardScreen from './src/screens/DashboardScreen';
+import HomeScreen from './src/screens/HomeScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
+import darkTheme from './src/styles/themes/darkTheme';
+import defaultTheme from './src/styles/themes/defaultTheme';
+
 
 
 const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={darkTheme}>
       <Drawer.Navigator>
-        <Drawer.Screen name="Dashboard" component={DashboardScreen} />
+        <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Settings" component={SettingsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
 }
+
+
 
