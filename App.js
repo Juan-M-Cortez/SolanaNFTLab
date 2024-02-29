@@ -30,7 +30,7 @@ export default function App() {
   return (
     <NavigationContainer theme={darkDrawerTheme}>
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeScreen} options={homeIcon} />
+        <Drawer.Screen name="T Home" component={HomeScreen} options={homeIcon} />
         <Drawer.Screen name="Settings" component={SettingsScreen} options={settingsIcon} />
       </Drawer.Navigator>
     </NavigationContainer>
